@@ -43,9 +43,15 @@ var SearchTips = React.createClass({
         var disable = {
             display:'none'
         }
+
+        var tips = [];
+        this.props.data.forEach(function(i){
+            tips.push(<option>{i}</option>)
+        })
+
         return (
-            <div style={this.props.appear?enable:disable} onMouseDown={this.selectRow} onMouseOut={this.props.handleMouseOut}>
-                {this.props.data}
+            <div style={this.props.appear?enable:disable} onMouseDown={this.selectRow} onMouseLeave={this.props.handleMouseLeave}>
+                {tips}
             </div>
         )
     },
@@ -59,7 +65,7 @@ var Search = React.createClass({
         return (
             <div>
                 <SearchBar lostFocus={this.lostFocus} getFocus={this.getFocus} />
-                <SearchTips data={this.props.data} appear={this.state.appear} handleMouseOut={this.handleMouseOut} />
+                <SearchTips data={this.props.data} appear={this.state.appear} handleMouseLeave={this.handleMouseLeave} />
             </div>
         )
     },
@@ -74,7 +80,7 @@ var Search = React.createClass({
     getFocus:function(haveWord){
         this.setState({appear:haveWord});
     },
-    handleMouseOut:function(){
+    handleMouseLeave:function(){
         this.setState({appear:false});
     }
 })
