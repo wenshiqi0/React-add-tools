@@ -1,0 +1,24 @@
+.switchButton{
+    position: absolute;
+    width: 60px;
+    transition: width 0.5s,tranform 0.5s,-webkit-transform 0.5s;
+}
+
+.switchButton:hover{
+    width: 80px;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
+
+.switchTable{
+    position: relative;
+    left: 12%;
+    top:8%
+}
+
+.switchImgCase{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: aquamarine;
+}

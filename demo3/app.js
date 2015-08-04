@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2015/7/28.
+ * Created by Winsky on 2015/7/28.
  */
 
 var data=[
@@ -35,7 +35,7 @@ var ScrollItem = React.createClass({
     render:function(){
         return(
             <div className='scrollItem'>
-                <img src='image/a.jpg' />
+                <img src='./../image/a.jpg' />
                 <span>{this.props.value}</span>
             </div>
         )

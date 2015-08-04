@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2015/7/31.
+ * Created by Winsky on 2015/7/31.
  */
 var Showcase = React.createClass({
     render:function(){
@@ -39,7 +39,7 @@ var Showcase = React.createClass({
         )
     },
     handleClick:function(e){
-        var reId = /^[a-zA-Z\/]+(\d)+\.[a-zA-Z]*$/i;
+        var reId = /^[\.a-zA-Z\/]+(\d)+\.[a-zA-Z]*$/i;
         var src = this.props.src;
         var res = reId.exec(src);
         var idInt = parseInt(res[1]);
@@ -109,7 +109,7 @@ var ScrollImg = React.createClass({
     handleClick:function(e){
         var reId = /^[a-zA-Z]+\-+(\d)$/i;
         var res = reId.exec(e.target.id);
-        var src = 'src/'+res[1]+'.jpg';
+        var src = './../image/'+res[1]+'.jpg';
         this.props.handleClick(src);
     },
     handleMouseOver:function(e){
@@ -137,14 +137,14 @@ var ScrollShowcase = React.createClass({
 
         return (
             <div style={size}>
-                <Showcase src={this.state.mainCase} handleClick={this.handleClickImg} left='src/arrow-left.gif' right='src/arrow-right.gif' imgRoot='src/' imgPostfix='.jpg' minId='1' maxId='3' />
-                <ScrollImg idPrefix = 'img-' handleClick={this.handleClickImg} width='160px' height='100px' imgRoot='src/' imgPostfix='.jpg' />
+                <Showcase src={this.state.mainCase} handleClick={this.handleClickImg} left='./../image/arrow-left.gif' right='./../image/arrow-right.gif' imgRoot='./../image/' imgPostfix='.jpg' minId='1' maxId='3' />
+                <ScrollImg idPrefix = 'img-' handleClick={this.handleClickImg} width='160px' height='100px' imgRoot='./../image/' imgPostfix='.jpg' />
             </div>
         )
     },
     getInitialState:function(){
         return {
-            mainCase:'src/1.jpg'
+            mainCase:'./../image/1.jpg'
         }
     },
     handleClickImg:function(s){
